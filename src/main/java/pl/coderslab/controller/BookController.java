@@ -1,13 +1,13 @@
 package pl.coderslab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Book;
 import pl.coderslab.services.MemoryBookService;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/books")
 public class BookController {
 
@@ -19,16 +19,14 @@ public class BookController {
     }
 
     @GetMapping("/")
-    public String allBooks(Model model, MemoryBookService memoryBookService){
-        model.addAttribute("books", memoryBookService.getList());
-        return "books";
+    public List<Book> findAll() {
+        return memoryBookService.getList();
     }
 
     @GetMapping("/{id}")
     public Book getBookById(@PathVariable long id){
         return memoryBookService.getBookById(id);
     }
-
 
     @PostMapping("/")
     public void addBook(@RequestBody Book book) {
