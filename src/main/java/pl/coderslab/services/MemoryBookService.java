@@ -1,15 +1,14 @@
-package pl.coderslab.controller;
+package pl.coderslab.services;
 
 
 import org.springframework.stereotype.Service;
-import org.w3c.dom.ls.LSException;
 import pl.coderslab.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MemoryBookService {
+public class MemoryBookService implements BookService {
     private List<Book> list;
 
     public MemoryBookService() {
@@ -22,21 +21,36 @@ public class MemoryBookService {
                 "Cay Horstmann, Gary Cornell", "Helion", "programming"));
     }
 
-    public List<Book> getList() {
-        return list;
-    }
-
     public void setList(List<Book> list) {
         this.list = list;
     }
 
-    public Book getBook(long id){
-        for (Book book: list){
-            if (book.getId() == id) {
-                return book;
-            }
-        }
-        return null;
+    @Override
+    public List<Book> getList() {
+        return list;
+    }
+
+    @Override
+    public Book getBookById(long id) {
+        return list.stream()
+                .filter(book -> book.getId() == id)
+                .findAny()
+                .orElse(null);
+    }
+
+    @Override
+    public void create(Book book) {
+        list.add(book);
+    }
+
+    @Override
+    public void update(Book book) {
+        list.set(list.indexOf(getBookById(book.getId())), book);
+    }
+
+    @Override
+    public void deleteBookById(long id) {
+        list.remove(getBookById(id));
     }
 
 }
