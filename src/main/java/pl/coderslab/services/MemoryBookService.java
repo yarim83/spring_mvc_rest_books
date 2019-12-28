@@ -21,13 +21,14 @@ public class MemoryBookService implements BookService {
                 "Cay Horstmann, Gary Cornell", "Helion", "programming"));
     }
 
-    public void setList(List<Book> list) {
-        this.list = list;
-    }
-
     @Override
     public List<Book> getList() {
         return list;
+    }
+
+    @Override
+    public void create(Book book) {
+        list.add(book);
     }
 
     @Override
@@ -39,17 +40,12 @@ public class MemoryBookService implements BookService {
     }
 
     @Override
-    public void create(Book book) {
-        list.add(book);
-    }
-
-    @Override
     public void update(Book book) {
         list.set(list.indexOf(getBookById(book.getId())), book);
     }
 
     @Override
-    public void deleteBookById(long id) {
+    public void delete(long id) {
         list.remove(getBookById(id));
     }
 

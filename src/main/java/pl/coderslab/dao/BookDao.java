@@ -1,7 +1,7 @@
 package pl.coderslab.dao;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.model.Book;
 import pl.coderslab.utils.DbUtil;
@@ -27,6 +27,7 @@ public class BookDao {
 
 
     public Book create(Book book) {
+        LOGGER.info("asd");
         try (Connection connection = DbUtil.getConn();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_QUERY, PreparedStatement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, book.getIsbn());
@@ -48,7 +49,7 @@ public class BookDao {
         }
     }
 
-    private Book read(int id) {
+    public Book read(long id) {
         try (Connection connection = DbUtil.getConn();
              PreparedStatement preparedStatement = connection.prepareStatement(READ_QUERY)) {
             preparedStatement.setLong(1, id);
@@ -63,6 +64,7 @@ public class BookDao {
                 book.setPublisher(resultSet.getString("publisher"));
                 book.setType(resultSet.getString("type"));
                 resultSet.close();
+                LOGGER.info(id);
                 return book;
             }
         } catch (SQLException | ClassNotFoundException e) {

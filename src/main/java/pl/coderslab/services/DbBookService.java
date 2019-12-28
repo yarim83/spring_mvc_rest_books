@@ -19,7 +19,7 @@ public class DbBookService implements BookService {
 
     @Override
     public List<Book> getList() {
-        return null;
+        return bookDao.findAll();
     }
 
     @Override
@@ -29,16 +29,16 @@ public class DbBookService implements BookService {
 
     @Override
     public Book getBookById(long id) {
-        return null;
+        return bookDao.read(id);
     }
 
     @Override
     public void update(Book book) {
-
+        bookDao.update(book);
     }
 
     @Override
-    public void deleteBookById(long id) {
-
+    public void delete(long id) {
+        bookDao.delete(id);
     }
 }
