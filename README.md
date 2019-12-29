@@ -5,7 +5,7 @@ wykorzystane technologie Spring MVC z dodatkową biblioteką Jackson oraz dodatk
 
 Serwer ma zaimplementowane następujące ścieżki:
 
-![Screenshot](https://github.com/yarim83/szkola_programowania/blob/master/src/pl/coderslab/screens/DAO.png)
+![Screenshot](https://github.com/yarim83/spring_mvc_rest_books/blob/master/src/main/resources/screens/metody%20http.png)
 
 ### Zastosowane technologie
 Ta sekcja przedstawia główne technologie wykorzystane w projekcie.
