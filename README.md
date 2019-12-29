@@ -1,38 +1,15 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+## O Projekcie
 
-# Egzamin - Java zaawansowana, Spring.
+W pramach projektu zostła napisana aplikacja backendowa do katalogowania książek metodą REST. W ramach API zostały
+wykorzystane technologie Spring MVC z dodatkową biblioteką Jackson oraz dodatkowe adnotacje. 
 
-Przed przystąpieniem do rozwiązywania zadań przeczytaj poniższe wskazówki
+Serwer ma zaimplementowane następujące ścieżki:
 
-## Jak zacząć?
+![Screenshot](https://github.com/yarim83/szkola_programowania/blob/master/src/pl/coderslab/screens/DAO.png)
 
-1. Stwórz [*fork*](https://guides.github.com/activities/forking/) repozytorium z zadaniami.
-2. Utwórz projekt Mavena:
-- groupId - **pl.coderslab**
-- artifactId - **jee-exam-spring**.
-3. Wykonaj poniższe polecenia:
-```bash
-$ cd ~/folderZprojektami/jeeexam5 // użyj własnej lokalizacji
-$ git init
-$ git remote add origin https://github.com/CodersLab/WAR_JAVA_JEE_Exam_5.git // użyj własnego forka
-$ git fetch
-$ git branch master origin/master
-$ git checkout master
-
-```
-**Zwróć szczególną uwagę na adres repozytorium oraz nazwę folderu.**
-
-4. Rozwiąż zadania i skomituj zmiany do swojego repozytorium. Użyj do tego komend `git add nazwa_pliku`.
-Jeżeli chcesz dodać wszystkie zmienione pliki użyj `git add .` 
-Pamiętaj że kropka na końcu jest ważna!
-Następnie skommituj zmiany komendą `git commit -m "nazwa_commita"`
-    **Repozytorium może zawierać jedynie katalog `src`, pliki: `pom.xml`, `.gitignore`, `README.md`**
-5. Wypchnij zmiany do swojego repozytorium na GitHubie.  Użyj do tego komendy `git push origin master`
-6. Stwórz [*pull request*](https://help.github.com/articles/creating-a-pull-request) do oryginalnego repozytorium, gdy skończysz wszystkie zadania.
-
-#### Pamiętaj, że pull request musi być stworzony, aby wykładowca dostał Twoje odpowiedzi.
-
-* podczas egzaminu **możesz** korzystać z notatek, kodu napisanego wcześniej, internetu i prezentacji,
-* zabroniona jest jakakolwiek komunikacja z innymi kursantami oraz osobami na zewnątrz.
-
-**Powodzenia!**
+### Zastosowane technologie
+Ta sekcja przedstawia główne technologie wykorzystane w projekcie.
+* [Java](https://docs.oracle.com/en/java/)
+* [Maven](https://maven.apache.org/)
+* [Spring MVC](https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html)
+* [MySQL](https://www.mysql.com/)
